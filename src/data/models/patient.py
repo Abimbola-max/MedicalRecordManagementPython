@@ -8,12 +8,6 @@ class Patient:
         self.last_name = last_name
         self.email = email
         self.date_of_birth = date_of_birth
-
-
-        # if isinstance(date_of_birth, str):
-        #     self.date_of_birth = datetime.strptime(date_of_birth, "%Y-%m-%d").strftime("%Y-%m-%d")
-        # else:
-        #     self.date_of_birth = date_of_birth.strftime("%Y-%m-%d")
         self.phone_number = phone_number
         self.medical_history = medical_history
 

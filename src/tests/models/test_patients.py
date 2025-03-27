@@ -8,10 +8,10 @@ class MyPatientsTestCase(unittest.TestCase):
 
     def setUp(self):
         self.patients = Patients()
-        # self.patients.collection.delete_many({})
+        self.patients.collection.delete_many({})
 
-    # def tearDown(self):
-    #     self.patients.collection.delete_many({})
+    def tearDown(self):
+        self.patients.collection.delete_many({})
 
     def test_that_patients_details_can_be_saved(self):
         self.assertEqual(0,self.patients.count())
