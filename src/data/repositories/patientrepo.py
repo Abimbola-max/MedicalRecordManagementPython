@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.data.models.patient import Patient
+from src.data.models.patientprofile import PatientProfile
 
 
 class PatientI(ABC):
@@ -10,9 +10,13 @@ class PatientI(ABC):
     #     pass
 
     @abstractmethod
-    def save(self, patient: Patient):
+    def save_patient(self, patient: PatientProfile):
         pass
 
     @abstractmethod
     def count(self):
+        pass
+
+    @abstractmethod
+    def find_by_email(self, email):
         pass
