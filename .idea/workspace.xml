@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02675871-406d-488f-96ea-853de3891db4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/models/passwordencrypt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/models/role.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/userrepository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/authentication/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/authentication/userservices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/test_users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/test_userservices.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/specialization.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/specialization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/appointment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/medicalhistory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/medicalhistory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/patientprofile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/ipatientrepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patientrepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patients.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/models/test_patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/models/test_patients.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,26 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Flask server.MedicalReportManagementPython.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_patients.MyPatientsTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bibi/MedicalReportManagementPython&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flask server.MedicalReportManagementPython.executor": "Run",
+    "Python tests.Python tests for test_patients.MyPatientsTestCase.executor": "Run",
+    "Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved.executor": "Run",
+    "Python tests.Python tests for test_users.TestUsers.test_that_users_can_be_saved.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/bibi/MedicalReportManagementPython",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services/authentication" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_users.TestUsers.test_that_users_can_be_saved">
     <configuration name="MedicalReportManagementPython" type="Python.FlaskServer">
       <module name="MedicalReportManagementPython" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -77,7 +93,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -117,10 +133,27 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_users.TestUsers.test_that_users_can_be_saved" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="MedicalReportManagementPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_users.TestUsers.test_that_users_can_be_saved&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved" />
+        <item itemvalue="Python tests.Python tests for test_users.TestUsers.test_that_users_can_be_saved" />
         <item itemvalue="Python tests.Python tests for test_patients.MyPatientsTestCase" />
+        <item itemvalue="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +186,10 @@
       <workItem from="1743092603718" duration="47000" />
       <workItem from="1743092679443" duration="266000" />
       <workItem from="1743092980345" duration="108000" />
+      <workItem from="1743093156190" duration="9731000" />
+      <workItem from="1743162070177" duration="9868000" />
+      <workItem from="1743310195287" duration="3515000" />
+      <workItem from="1743373574747" duration="24786000" />
     </task>
     <servers />
   </component>
@@ -160,7 +197,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$.coverage" NAME=" Coverage Results" MODIFIED="1743090906457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests/models" />
+    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$.coverage" NAME=" Coverage Results" MODIFIED="1743378668401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/MedicalReportManagementPython$MedicalReportManagementPython.coverage" NAME="MedicalReportManagementPython Coverage Results" MODIFIED="1743076937272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

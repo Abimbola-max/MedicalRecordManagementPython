@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
-from src.data.models.patient import Patient
-from src.data.repositories.ipatientrepo import PatientI
+from src.data.models.patientprofile import PatientProfile
+from src.data.repositories.patientrepo import PatientI
 
 
 class Patients(PatientI):
@@ -11,7 +11,7 @@ class Patients(PatientI):
         self.database = self.client['medical_report_management_system']
         self.collection = self.database['patients']
 
-    def save(self, patient: Patient):
+    def save_patient(self, patient: PatientProfile):
         new_patient_data = {'patient_id': patient.patient_id,
                        'first_name': patient.first_name,
                        'last_name': patient.last_name,
@@ -26,3 +26,11 @@ class Patients(PatientI):
 
     def count(self):
         return self.collection.count_documents({})
+
+    def find_by_email(self, email):
+        found = self.collection.find_one(email)
+        if found:
+            return True
+        return False
+
+
