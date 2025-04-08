@@ -97,3 +97,13 @@ class ErrorRegistering(Exception):
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)
+
+class InvalidRoleException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class IncorrectPasswordException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)

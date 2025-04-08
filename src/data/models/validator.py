@@ -1,3 +1,5 @@
+import re
+
 from src.exceptions.exceptions import *
 
 
