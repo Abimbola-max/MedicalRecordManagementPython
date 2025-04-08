@@ -20,3 +20,7 @@ class PatientI(ABC):
     @abstractmethod
     def find_by_email(self, email):
         pass
+
+    @abstractmethod
+    def book_appointment(self, patient_id, appointment_date, appointment_time, reason):
+        pass

@@ -5,6 +5,7 @@ from src.data.models.passwordencrypt import PasswordEncrypt
 
 class User(ABC):
 
+
     def __init__(self, username, email, password, role):
         self.username = username
         self.email = email

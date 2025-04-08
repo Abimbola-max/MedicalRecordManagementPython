@@ -11,14 +11,12 @@ class Users(UserRepository):
         self.database = self.client['medical_report_management_system']
         self.collection = self.database['users']
 
-
     def save_user(self, user: User):
         user_data = {
             'username': user.username,
             'email': user.email,
             'password': user.password,
             'role': user.role.value,
-            # 'profile': user.profile
         }
         insert_document = self.collection.insert_one(user_data)
         default_return_mongo_id = insert_document.inserted_id
@@ -29,6 +27,9 @@ class Users(UserRepository):
 
     def find_user_by(self, email: str):
         return self.collection.find_one({'email': email})
+
+    def close_client(self):
+        self.client.close()
 
 
 

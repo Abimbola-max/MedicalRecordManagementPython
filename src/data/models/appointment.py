@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from src.data.models.doctor import Doctor
 from src.data.models.patientprofile import PatientProfile
 
 
@@ -10,3 +13,5 @@ class Appointment:
         self.date = date
         self.time = time
         self.reason = reason
+
+    

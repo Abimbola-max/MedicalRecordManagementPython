@@ -10,6 +10,7 @@ class Patients(PatientI):
         self.client = MongoClient('mongodb://localhost:27017/')
         self.database = self.client['medical_report_management_system']
         self.collection = self.database['patients']
+        self.appointments_collection = self.database['appointments']
 
     def save_patient(self, patient: PatientProfile):
         new_patient_data = {'patient_id': patient.patient_id,
@@ -27,10 +28,19 @@ class Patients(PatientI):
     def count(self):
         return self.collection.count_documents({})
 
-    def find_by_email(self, email):
-        found = self.collection.find_one(email)
-        if found:
-            return True
-        return False
+    def book_appointment(self, patient_id, appointment_date, appointment_time, reason):
+        patient = self.collection.find_one({'patient_id': patient_id})
+        if not patient:
+            print(f"Patient with ID {patient_id} not found.")
+            return None
+
+        new_appointment = {
+            'patient_id': patient_id,
+            'appointment_date': appointment_date,
+            'appointment_time': appointment_time,
+            'reason': reason
+        }
+        insert_result = self.appointments_collection.insert_one(new_appointment)
+        return insert_result.inserted_id
 
 

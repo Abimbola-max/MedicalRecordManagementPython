@@ -10,7 +10,6 @@ class UserServices:
         self.repository = user_repo
         self.password_encrypt = PasswordEncrypt()
 
-    # @staticmethod
     def register(self, user: User):
         if self.repository.find_user_by(user.email):
             return False
@@ -35,12 +34,12 @@ class UserServices:
                 username=user['username'],
                 email=user['email'],
                 password=user['password'],
-                role=patient_string,
                 user_id=user['user_id'],
                 first_name=user['first_name'],
                 last_name=user['last_name'],
                 date_of_birth=user['date_of_birth'],
                 phone_number=user['phone_number'],
+                gender = user['gender'],
                 medical_history=user['medical_history']
             )
 
@@ -51,4 +50,7 @@ class UserServices:
         if user['role'] == 'patient':
             patient = self.__create_user_profile(user)
             return patient.view_profile()
+        elif user['role'] == 'doctor':
+            doctor = self.__create_user_profile(user)
+            return doctor.view_profile()
         raise ProfileDoesNotExistException("Profile does not exist.")

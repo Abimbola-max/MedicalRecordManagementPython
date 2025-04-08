@@ -9,10 +9,11 @@ class TestUsers(TestCase):
 
     def setUp(self):
         self.users = Users()
-        self.users.collection.delete_many({})
+        # self.users.collection.delete_many({})
 
     def tearDown(self):
-        self.users.collection.delete_many({})
+        # self.users.collection.delete_many({})
+        self.users.close_client()
 
     def test_that_users_can_be_saved(self):
         self.assertEqual(self.users.count_users(), 0)
