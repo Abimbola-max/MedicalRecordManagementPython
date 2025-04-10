@@ -11,7 +11,7 @@ class Validator:
            raise NullException("First Name field is required")
        if not first_name.strip():
            raise InvalidNameLengthException("No spaces allowed amongst the letters.")
-       if len(first_name) < 3 or not first_name.isalpha():
+       if len(first_name) < 1:
            raise InvalidNameLengthException("First Name must be at least 3 characters long and contain only letters.")
        return True
 

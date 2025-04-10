@@ -11,7 +11,13 @@ class PasswordEncrypt:
 
     @staticmethod
     def verify_password(password: str, hashed_password: str):
-        return bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+
+        # print(f"checking: {password!r} both {hashed_password!r}")
+
+        return bcrypt.checkpw(
+            password.encode('utf-8'),
+            hashed_password.encode('utf-8')
+        )
 
 
 
