@@ -5,20 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02675871-406d-488f-96ea-853de3891db4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tests/test_passwordencrypt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/patientcontroller/patientcontroller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/models/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/adminrepo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/adminrepo/admins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/adminrepo/medicalrepository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/repositories/patientrepo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/patientservice/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/patientservice/patientservice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/usersauthentication/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/usercontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/usercontroller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/passwordencrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/passwordencrypt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/role.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/role.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/appointment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/doctor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/patientprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/patientprofile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/models/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/patientrepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patientrepo/patientrepo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patientrepo/patients.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repositories/userrepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/userrepository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repositories/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/authentication/userservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authentication/userservices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authentication/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/patientcontroller/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authentication/userservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/usersauthentication/userservices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/models/test_patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/models/test_patients.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/test_userservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_userservices.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +83,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;userclass&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;usersuccessful&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/bibi/MedicalReportManagementPython&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -86,6 +96,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data/repositories/patientrepo" />
       <recent name="$PROJECT_DIR$/src/services/authentication" />
     </key>
   </component>
@@ -98,7 +109,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -189,10 +200,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="Python tests.Python tests for test_userservices.TestUserServices.test_that_user_can_be_registered" />
         <item itemvalue="Python tests.Python tests for test_userservices.TestUserServices.test_that_user_can_register_and_login_with_valid_details" />
         <item itemvalue="Python tests.Python tests for test_passwordencrypt.TestPasswordEncrypt" />
         <item itemvalue="Python tests.Python tests for test_users.TestUsers.test_that_users_can_be_saved" />
-        <item itemvalue="Python tests.Python tests for test_userservices.TestUserServices.test_that_user_can_be_registered" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +250,8 @@
       <workItem from="1744185676178" duration="5299000" />
       <workItem from="1744201794612" duration="1455000" />
       <workItem from="1744209810221" duration="6018000" />
-      <workItem from="1744247687560" duration="269000" />
+      <workItem from="1744247687560" duration="18174000" />
+      <workItem from="1744296010861" duration="4673000" />
     </task>
     <servers />
   </component>
@@ -247,8 +259,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744216603748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$.coverage" NAME=" Coverage Results" MODIFIED="1744216527965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
+    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744300651358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$.coverage" NAME=" Coverage Results" MODIFIED="1744294480392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests" />
     <SUITE FILE_PATH="coverage/MedicalReportManagementPython$MedicalReportManagementPython.coverage" NAME="MedicalReportManagementPython Coverage Results" MODIFIED="1743076937272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

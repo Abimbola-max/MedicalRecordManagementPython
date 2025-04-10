@@ -57,3 +57,15 @@ class Validator:
        if len(password) < 5:
            raise InvalidPasswordLengthException("Password must be at least 5 characters long and contain only letters.")
        return True
+
+   @staticmethod
+   def validate_nigerian_phone_number(phone_number):
+       pattern_local = r"^0\d{10, 11}$"
+       pattern_international = r"^\+234\d{10, 11}$"
+
+       if re.fullmatch(pattern_local, phone_number):
+           return True
+       elif re.fullmatch(pattern_international, phone_number):
+           return True
+       else:
+            raise InvalidPhoneNumberException("Invalid Phone Number.")

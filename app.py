@@ -2,7 +2,7 @@ from flask import Flask
 
 from src.controllers.usercontroller import UserController
 from src.data.repositories.users import Users
-from src.services.authentication.userservices import UserServices
+from src.services.usersauthentication.userservices import UserServices
 
 app = Flask(__name__)
 user_repo = Users()

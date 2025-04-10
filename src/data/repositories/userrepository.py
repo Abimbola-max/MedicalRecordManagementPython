@@ -21,6 +21,11 @@ class UserRepository(ABC):
     def find_user_by_both(self, email: str, role):
         pass
 
+    @abstractmethod
+    def find_user_by_id(self, user_id: str):
+        pass
+
+
 
 
 

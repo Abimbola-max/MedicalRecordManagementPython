@@ -12,32 +12,14 @@ class UserServices:
     def __init__(self, user_repo: Users):
         self.repository = user_repo
 
+
     def register_user(self, username, email, password, roles):
         try:
             UserServices.__validate_register(username, email, password)
-
-            if not isinstance(roles, (list, tuple)):
-                roles = [roles]
-
-            processed_roles = []
-            for role in roles:
-                if isinstance(role, Role):
-                    processed_role = role.value.upper()
-                else:
-                    processed_role = str(role).upper()
-
-                if not Role.is_valid(processed_role):
-                    raise InvalidRoleException(f"Invalid role '{role}'. Must be one of: {Role.DOCTOR}, {Role.PATIENT}, {Role.ADMIN}")
-
-                processed_roles.append(processed_role)
-
+            processed_role = UserServices.__validate_roles(roles)
+            self.__validate_email(email)
             password_hash = PasswordEncrypt.encrypt_password(password)
-
-            existing_user = self.repository.find_user_by(email)
-            if existing_user:
-                raise EmailAlreadyExistException(f"User with email {email} already exists.")
-
-            new_user = User(username.strip(), email.strip(), password_hash, processed_roles)
+            new_user = User(username.strip(), email.strip(), password_hash, processed_role)
             user_id = self.repository.save_user(new_user)
             return user_id
         except InvalidNameException as e:
@@ -53,7 +35,6 @@ class UserServices:
             raise NotFoundException(f"User with email {email} not found.")
 
         user_password = user_data.password
-        print(f"Checking: {password!r} against {user_data.password!r}")
 
         if not PasswordEncrypt.verify_password(password, user_password):
             raise IncorrectPasswordException("Incorrect password.")
@@ -69,6 +50,31 @@ class UserServices:
         Validator.validate_first_name(username)
         Validator.validate_email(email)
         Validator.validate_password(password)
+
+    @staticmethod
+    def __validate_roles(roles):
+        if not isinstance(roles, (list, tuple)):
+            roles = [roles]
+
+        processed_roles = []
+        for role in roles:
+            if isinstance(role, Role):
+                processed_role = role.value.upper()
+            else:
+                processed_role = str(role).upper()
+
+            if not Role.is_valid(processed_role):
+                raise InvalidRoleException(
+                    f"Invalid role '{role}'. Must be one of: {Role.DOCTOR}, {Role.PATIENT}, {Role.ADMIN}")
+
+            processed_roles.append(processed_role)
+        return processed_roles
+
+    def __validate_email(self, email):
+        existing_user = self.repository.find_user_by(email)
+        if existing_user:
+                raise EmailAlreadyExistException(f"User with email {email} already exists.")
+
 
 
 

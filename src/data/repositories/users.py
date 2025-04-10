@@ -1,3 +1,4 @@
+from bson import ObjectId
 from pymongo import MongoClient
 
 from src.data.models.user import User
@@ -28,7 +29,6 @@ class Users(UserRepository):
     def find_user_by(self, email: str):
         user_data = self.collection.find_one({'email': email})
         if user_data:
-            print(f"Stored Password Hash: {user_data['password']!r}")
             return User (
                 username=user_data['username'],
                 email=user_data['email'],
@@ -48,6 +48,9 @@ class Users(UserRepository):
                 roles=user_data.get('roles', [])
             )
         return None
+
+    def find_user_by_id(self, user_id: str):
+        return self.collection.find_one({'_id': ObjectId(user_id)})
 
     def close_client(self):
         self.client.close()

@@ -4,7 +4,7 @@ from src.data.models.passwordencrypt import PasswordEncrypt
 from src.data.models.role import Role
 from src.data.repositories.users import Users
 from src.exceptions.exceptions import InvalidEmailPatternException, NullException, InvalidNameLengthException
-from src.services.authentication.userservices import UserServices
+from src.services.usersauthentication.userservices import UserServices
 
 
 class TestUserServices(TestCase):

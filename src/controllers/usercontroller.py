@@ -1,7 +1,7 @@
 from flask import request, jsonify
 
 from src.exceptions.exceptions import *
-from src.services.authentication.userservices import UserServices
+from src.services.usersauthentication.userservices import UserServices
 
 
 class UserController:
