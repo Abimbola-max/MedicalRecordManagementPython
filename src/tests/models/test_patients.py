@@ -1,7 +1,7 @@
 import unittest
 
 from src.data.models.patientprofile import PatientProfile
-from src.data.repositories.patients import Patients
+from src.data.repositories.patientrepo.patients import Patients
 
 
 class MyPatientsTestCase(unittest.TestCase):

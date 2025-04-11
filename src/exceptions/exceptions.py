@@ -73,11 +73,6 @@ class VerificationFailedException(Exception):
         self.message = message
         super().__init__(self.message)
 
-class NotFoundException(Exception):
-    def __init__(self, message):
-        self.message = message
-        super().__init__(self.message)
-
 class InvalidGradeException(Exception):
     def __init__(self, message):
         self.message = message
@@ -104,6 +99,21 @@ class InvalidRoleException(Exception):
         super().__init__(self.message)
 
 class IncorrectPasswordException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class InvalidPhoneNumberException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class UserDoesNotExistException(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class JsonifyError(Exception):
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)

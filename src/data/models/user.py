@@ -1,17 +1,19 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from src.data.models.passwordencrypt import PasswordEncrypt
+from src.data.models.role import Role
 from src.data.models.validator import Validator
 
 
 class User(ABC):
 
 
-    def __init__(self, username, email, password, role):
+    def __init__(self, username: str, email: str, password: str, roles: list, _id=None):
+        self._id = _id
         self.username = username
         self.email = email
-        self.password = PasswordEncrypt.encrypt_password(password)
-        self.role = role
+        self.password = password
+        self.roles = roles
 
     @property
     def username(self):
@@ -37,15 +39,30 @@ class User(ABC):
 
     @password.setter
     def password(self, password):
-        Validator.validate_password(password)
         self.__password = password
 
     @property
-    def role(self):
-        return self.__role
+    def roles(self):
+        return self.__roles
 
-    @role.setter
-    def role(self, role):
-        self.__role = role
+    @roles.setter
+    def roles(self, roles):
+        self.__roles = roles
 
+    @property
+    def _id(self):
+        return self.__id
+
+    @_id.setter
+    def _id(self, value):
+        self.__id = value
+
+    # @property
+    # def another_role(self):
+    #     return self.__another_role
+    #
+    # @another_role.setter
+    # def another_role(self, another_role):
+    #     self.__another_role = another_role
+    #
 

@@ -1,36 +1,32 @@
+from src.data.models import user
 from src.data.models.passwordencrypt import PasswordEncrypt
 from src.data.models.role import Role
 from src.data.models.user import User
 from src.data.models.validator import Validator
-from src.data.repositories.userrepository import UserRepository
+from src.data.repositories.users import Users
 from src.exceptions.exceptions import *
 
 
 class UserServices:
 
-    def __init__(self, user_repo: UserRepository):
+    def __init__(self, user_repo: Users):
         self.repository = user_repo
-        self.password_encrypt = PasswordEncrypt()
 
-    def register_user(self, username, email, password, role):
+
+    def register_user(self, username, email, password, roles):
         try:
-            Validator.validate_first_name(username)
-            Validator.validate_email(email)
-            Validator.validate_password(password)
-        except InvalidEmailPatternException as e:
-            print(e)
+            UserServices.__validate_register(username, email, password)
+            processed_role = UserServices.__validate_roles(roles)
+            self.__validate_email(email)
+            password_hash = PasswordEncrypt.encrypt_password(password)
+            new_user = User(username.strip(), email.strip(), password_hash, processed_role)
+            user_id = self.repository.save_user(new_user)
+            return user_id
         except InvalidNameException as e:
             print(f"Error {e}")
-        except InvalidRoleException as e:
-            raise InvalidRoleException(f"Invalid role {role}. Must either be Doctor, Patient or Admin")
+        except InvalidRoleException:
+            raise InvalidRoleException(f"Invalid role {roles}. Must either be Doctor, Patient or Admin")
 
-        existing_user = self.repository.find_user_by(email)
-        if existing_user == True:
-            raise EmailAlreadyExistException(f"User with email {email} already exist.")
-
-        new_user = User(username.strip(), email.strip(), password.strip(), role)
-        user_id = self.repository.save_user(new_user)
-        return user_id
 
     def login(self, email, password):
         user_data = self.repository.find_user_by(email)
@@ -38,10 +34,46 @@ class UserServices:
         if not user_data:
             raise NotFoundException(f"User with email {email} not found.")
 
-        user_password = user_data.get('password')
-        if not PasswordEncrypt.verify_password(user_password, password.strip()):
+        user_password = user_data.password
+
+        if not PasswordEncrypt.verify_password(password, user_password):
             raise IncorrectPasswordException("Incorrect password.")
-        return {"message": "Login successful", "user_id": str(user_data.get('_id'))}
+        return {
+            "message": "Login successful",
+            "user_id": str(user_data._id),
+            "roles": user_data.roles,
+            "email": user_data.email
+        }
+
+    @staticmethod
+    def __validate_register(username, email, password):
+        Validator.validate_first_name(username)
+        Validator.validate_email(email)
+        Validator.validate_password(password)
+
+    @staticmethod
+    def __validate_roles(roles):
+        if not isinstance(roles, (list, tuple)):
+            roles = [roles]
+
+        processed_roles = []
+        for role in roles:
+            if isinstance(role, Role):
+                processed_role = role.value.upper()
+            else:
+                processed_role = str(role).upper()
+
+            if not Role.is_valid(processed_role):
+                raise InvalidRoleException(
+                    f"Invalid role '{role}'. Must be one of: {Role.DOCTOR}, {Role.PATIENT}, {Role.ADMIN}")
+
+            processed_roles.append(processed_role)
+        return processed_roles
+
+    def __validate_email(self, email):
+        existing_user = self.repository.find_user_by(email)
+        if existing_user:
+                raise EmailAlreadyExistException(f"User with email {email} already exists.")
 
 
 
