@@ -7,23 +7,28 @@ from src.data.models.user import User
 
 class PatientProfile(User):
 
-    def __init__(self, username, email, password, user_id: str, first_name: str, last_name: str, date_of_birth, phone_number: str, gender: Gender, medical_history: str):
+    def __init__(self, username, email, password, user_id: str, first_name: str, last_name: str, date_of_birth, phone_number: str, gender: str, medical_history: str):
         super().__init__(username, email, password, [Role.PATIENT])
-        self.patient_id = user_id
+        self.user_id = user_id
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
         self.phone_number = phone_number
-        self.gender = gender
+        # self.gender = gender
         self.medical_history = medical_history
+        try:
+            # Pass gender directly to the Gender enum (case-insensitive)
+            self.gender = Gender(gender)
+        except ValueError as e:
+            raise ValueError(str(e))
 
     @property
-    def patient_id(self):
-        return self.__patient_id
+    def user_id(self):
+        return self.__user_id
 
-    @patient_id.setter
-    def patient_id(self, value):
-        self.__patient_id = value
+    @user_id.setter
+    def user_id(self, value):
+        self.__user_id = value
 
     @property
     def first_name(self):
@@ -56,6 +61,14 @@ class PatientProfile(User):
     @gender.setter
     def gender(self, value):
         self.__gender = value
+
+    @property
+    def medical_history(self):
+        return self.__medical_history
+
+    @medical_history.setter
+    def medical_history(self, value):
+        self.__medical_history = value
 
     def update_medical_history(self, new_medical_history):
         self.medical_history = new_medical_history

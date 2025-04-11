@@ -20,11 +20,11 @@ class PatientService:
         if Role.PATIENT.value not in user_check.get('roles', []):
             raise UserDoesNotExistException("User is not a patient.")
 
-        patient = PatientProfile(
+        patient = PatientProfile (
             username=user_check['username'],
             email=user_check['email'],
             password=user_check['password'],
-            user_id=user_check['_id'],
+            user_id=user_id,
             **profile
         )
         return self.patient_repo.save_patient(patient)

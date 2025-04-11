@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
+from src.data.models.gender import Gender
 from src.data.models.patientprofile import PatientProfile
-from src.data.models.role import Role
 from src.data.repositories.patientrepo.patientrepo import PatientI
 from src.data.repositories.users import Users
 from src.exceptions.exceptions import UserDoesNotExistException, NotFoundException
@@ -17,11 +17,12 @@ class Patients(PatientI):
         self.appointments_collection = self.database['appointments']
 
     def save_patient(self, patient: PatientProfile):
-        user_data = self.users.find_user_by_id(patient.patient_id)
+        user_data = self.users.find_user_by_id(patient.user_id)
         if not user_data:
             raise UserDoesNotExistException("User does not exist.")
+
         patient_data = {
-            'patient_id': str(patient.patient_id),
+            'user_id': str(patient.user_id),
             'first_name': patient.first_name,
             'last_name': patient.last_name,
             'email': patient.email,
@@ -32,7 +33,7 @@ class Patients(PatientI):
         }
         insert_document = self.collection.insert_one(patient_data)
         default_return_mongo_id = insert_document.inserted_id
-        return patient_data
+        return str(default_return_mongo_id)
 
     def count(self):
         return self.collection.count_documents({})
