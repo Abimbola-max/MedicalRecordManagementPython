@@ -1,33 +1,33 @@
 from datetime import datetime
 
-from src.data.models.doctor import Doctor
+from src.data.models.doctorprofile import DoctorProfile
 from src.data.models.patientprofile import PatientProfile
 
 
 class Appointment:
 
-    def __init__(self, patient: PatientProfile, doctor: Doctor, date_time: datetime, reason: str = None):
+    def __init__(self, patient_id: PatientProfile, doctor_id: DoctorProfile, date_time: datetime, reason: str = None):
         # self.appointment_id = appointment_id
-        self.patient = patient
-        self.doctor = doctor
+        self.patient_id = patient_id
+        self.doctor_id = doctor_id
         self.date_time = date_time
         self.reason = reason
         self.status = "scheduled"
 
     @property
-    def patient(self):
+    def patient_id(self):
         return self.__patient
 
-    @patient.setter
-    def patient(self, patient):
+    @patient_id.setter
+    def patient_id(self, patient):
         self.__patient = patient
 
     @property
-    def doctor(self):
+    def doctor_id(self):
         return self.__doctor
 
-    @doctor.setter
-    def doctor(self, dokita):
+    @doctor_id.setter
+    def doctor_id(self, dokita):
         self.__doctor = dokita
 
     @property
@@ -45,6 +45,14 @@ class Appointment:
     @reason.setter
     def reason(self, reasons):
         self.__reason = reasons
+
+    @property
+    def status(self):
+        return self.__status
+
+    @status.setter
+    def status(self, status):
+        self.__status = status
 
 
     

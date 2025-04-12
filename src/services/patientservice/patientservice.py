@@ -1,14 +1,13 @@
-from src.data.models import user
 from src.data.models.patientprofile import PatientProfile
 from src.data.models.role import Role
-from src.data.repositories.patientrepo.patients import Patients
-from src.data.repositories.users import Users
+from src.data.repositories.patientrepositories.patients import PatientRepo
+from src.data.repositories.userrepositories.users import Users
 from src.exceptions.exceptions import UserDoesNotExistException
 
 
 class PatientService:
 
-    def __init__(self, patient_repo: Patients, user_repo: Users):
+    def __init__(self, patient_repo: PatientRepo, user_repo: Users):
         self.patient_repo = patient_repo
         self.user_repo = user_repo
 
@@ -27,4 +26,4 @@ class PatientService:
             user_id=user_id,
             **profile
         )
-        return self.patient_repo.save_patient(patient)
+        return self.patient_repo.save(patient)

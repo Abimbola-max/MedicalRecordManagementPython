@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from src.data.models.passwordencrypt import PasswordEncrypt
 from src.data.models.role import Role
-from src.data.repositories.users import Users
+from src.data.repositories.userrepositories.users import Users
 from src.exceptions.exceptions import InvalidEmailPatternException, NullException, InvalidNameLengthException
 from src.services.usersauthentication.userservices import UserServices
 

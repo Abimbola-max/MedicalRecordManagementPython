@@ -1,12 +1,13 @@
 from abc import ABC, abstractmethod
+from typing import Optional
 
 from src.data.models.patientprofile import PatientProfile
 
 
-class PatientI(ABC):
+class PatientRepo(ABC):
 
     @abstractmethod
-    def save_patient(self, patient: PatientProfile):
+    def save(self, patient: PatientProfile):
         pass
 
     @abstractmethod
@@ -15,6 +16,10 @@ class PatientI(ABC):
 
     @abstractmethod
     def find_by_id(self, patient_id):
+        pass
+
+    @abstractmethod
+    def find_profile(self, user_id: str)-> Optional[PatientProfile]:
         pass
 
     @abstractmethod

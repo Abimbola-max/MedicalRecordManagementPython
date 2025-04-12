@@ -1,8 +1,7 @@
 from unittest import TestCase
 
-from src.data.models.role import Role
 from src.data.models.user import User
-from src.data.repositories.users import Users
+from src.data.repositories.userrepositories.users import Users
 
 
 class TestUsers(TestCase):
