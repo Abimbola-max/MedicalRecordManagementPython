@@ -5,39 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02675871-406d-488f-96ea-853de3891db4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointmentrepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/doctorrepositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/doctorrepositories/doctorrepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/doctorrepositories/doctors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/patientrepositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/userrepositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/adminservices/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/adminservices/adminservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/appointmentservices/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/appointmentservices/appointmentservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/doctorservices/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/doctorservices/doctorservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/test_doctorrepository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/doctorcontroller/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/doctorcontroller/doctorcontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/usercontroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/usercontrollers/usercontroller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/models/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/doctorprofile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/patientprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/patientprofile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/adminrepo/admins.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/adminrepo/admins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/adminrepo/medicalrepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/adminrepo/adminrepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/patientrepo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/usercontrollers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/patientrepo/patientrepo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patientrepositories/patientrepo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/patientrepo/patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/patientrepositories/patients.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/userrepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/userrepositories/userrepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/userrepositories/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/doctorprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/doctorprofile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/specialization.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/specialization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointmentrepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointmentrepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointments.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/appointmentrepo/appointments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/doctorrepositories/doctorrepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/doctorrepositories/doctorrepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/adminservices/adminservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/adminservices/adminservice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/appointmentservices/appointmentservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/appointmentservices/appointmentservice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/doctorservices/doctorservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/doctorservices/doctorservice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/patientservice/patientservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/patientservice/patientservice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/usersauthentication/userservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/usersauthentication/userservices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/models/test_patients.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/models/test_patients.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test_userservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_userservices.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +72,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;profile&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;doctor&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/bibi/MedicalReportManagementPython&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -110,7 +91,7 @@
       <recent name="$PROJECT_DIR$/src/services/authentication" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved">
+  <component name="RunManager" selected="Flask server.Flask (app.py)">
     <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
       <module name="MedicalReportManagementPython" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -209,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved" />
         <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="Python tests.Python tests for test_patients.MyPatientsTestCase.test_that_patients_details_can_be_saved" />
         <item itemvalue="Python tests.Python tests for test_userservices.TestUserServices.test_that_user_can_be_registered" />
         <item itemvalue="Python tests.Python tests for test_userservices.TestUserServices.test_that_user_can_register_and_login_with_valid_details" />
         <item itemvalue="Python tests.Python tests for test_passwordencrypt.TestPasswordEncrypt" />
@@ -262,26 +243,16 @@
       <workItem from="1744209810221" duration="6018000" />
       <workItem from="1744247687560" duration="18174000" />
       <workItem from="1744296010861" duration="32419000" />
-      <workItem from="1744457538050" duration="5084000" />
+      <workItem from="1744457538050" duration="16349000" />
+      <workItem from="1744511111182" duration="1190000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/data/repositories/adminrepo/admins.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744338009489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MedicalReportManagementPython$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744473608857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MedicalReportManagementPython$.coverage" NAME=" Coverage Results" MODIFIED="1744446101748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tests/models" />
     <SUITE FILE_PATH="coverage/MedicalReportManagementPython$MedicalReportManagementPython.coverage" NAME="MedicalReportManagementPython Coverage Results" MODIFIED="1743076937272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>

@@ -26,10 +26,9 @@ class DoctorRepository(Doctors):
             raise UserDoesNotExistException("User does not exist.")
 
         doctor_data = {
-            'user_id': str(doctor.doctor_id),
+            'doctor_id': str(doctor.doctor_id),
             'first_name': doctor.first_name,
             'last_name': doctor.last_name,
-            'email': doctor.email,
             'phone_number': doctor.phone_number,
             'gender': doctor.gender.value,
             'specialization': doctor.specialization.value

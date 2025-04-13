@@ -6,7 +6,7 @@ from src.data.models.user import User
 
 class DoctorProfile(User):
 
-    def __init__(self, username, email, password, first_name, last_name, phone_number, gender, specialization:Specialization, user_id =None):
+    def __init__(self, username, email, password, first_name, last_name, phone_number, gender, specialization:Specialization, user_id):
         super().__init__(username, email, password, [Role.DOCTOR])
         self.doctor_id = user_id
         self.first_name = first_name

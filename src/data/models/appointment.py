@@ -6,8 +6,8 @@ from src.data.models.patientprofile import PatientProfile
 
 class Appointment:
 
-    def __init__(self, patient_id: PatientProfile, doctor_id: DoctorProfile, date_time: datetime, reason: str = None):
-        # self.appointment_id = appointment_id
+    def __init__(self, patient_id: PatientProfile, doctor_id: DoctorProfile, date_time: datetime, reason: str = None, appointment_id=None):
+        self.appointment_id = appointment_id
         self.patient_id = patient_id
         self.doctor_id = doctor_id
         self.date_time = date_time
@@ -21,6 +21,14 @@ class Appointment:
     @patient_id.setter
     def patient_id(self, patient):
         self.__patient = patient
+
+    @property
+    def appointment_id(self):
+        return self.__appointment_id
+
+    @appointment_id.setter
+    def appointment_id(self, appointment):
+        self.__appointment_id = appointment
 
     @property
     def doctor_id(self):
