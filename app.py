@@ -1,9 +1,9 @@
 from flask import Flask
 
 from src.controllers.patientcontroller.patientcontroller import PatientController
-from src.controllers.usercontroller import UserController
-from src.data.repositories.patientrepo.patients import Patients
-from src.data.repositories.users import Users
+from src.controllers.usercontrollers.usercontroller import UserController
+from src.data.repositories.patientrepositories.patients import PatientRepo
+from src.data.repositories.userrepositories.users import Users
 from src.services.patientservice.patientservice import PatientService
 from src.services.usersauthentication.userservices import UserServices
 
@@ -12,7 +12,7 @@ user_repo = Users()
 user_service = UserServices(user_repo)
 user_controller = UserController(user_service)
 
-patient_repo = Patients(user_repo)
+patient_repo = PatientRepo(user_repo)
 patient_service = PatientService(patient_repo, user_repo)
 patient_controller = PatientController(patient_service)
 

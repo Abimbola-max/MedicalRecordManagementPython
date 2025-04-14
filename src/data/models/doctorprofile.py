@@ -1,17 +1,19 @@
+from src.data.models.gender import Gender
 from src.data.models.role import Role
 from src.data.models.specialization import Specialization
 from src.data.models.user import User
 
 
-class Doctor(User):
+class DoctorProfile(User):
 
-    def __init__(self, username, email, password, first_name, last_name, phone_number, specialization:Specialization, user_id =None):
+    def __init__(self, username, email, password, first_name, last_name, phone_number, gender, specialization:Specialization, user_id =None):
         super().__init__(username, email, password, [Role.DOCTOR])
         self.doctor_id = user_id
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number
         self.specialization = specialization
+        self.gender = gender
         self.is_available = True
 
     @property
@@ -52,7 +54,29 @@ class Doctor(User):
 
     @specialization.setter
     def specialization(self, value):
-        self.__specialization = value
+        try:
+            self.__specialization = Specialization(value)
+        except ValueError as e:
+            raise ValueError(str(e))
+
+    @property
+    def gender(self):
+        return self.__gender
+
+    @gender.setter
+    def gender(self, gender):
+        try:
+            self.__gender = Gender(gender)
+        except ValueError as e:
+            raise ValueError(str(e))
+
+    @property
+    def is_available(self):
+        return self.__is_available
+
+    @is_available.setter
+    def is_available(self, value):
+        self.__is_available = value
 
 
 

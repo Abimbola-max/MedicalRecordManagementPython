@@ -1,9 +1,8 @@
-from src.data.models import user
 from src.data.models.passwordencrypt import PasswordEncrypt
 from src.data.models.role import Role
 from src.data.models.user import User
 from src.data.models.validator import Validator
-from src.data.repositories.users import Users
+from src.data.repositories.userrepositories.users import Users
 from src.exceptions.exceptions import *
 
 

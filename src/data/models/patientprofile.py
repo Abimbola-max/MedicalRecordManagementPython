@@ -14,10 +14,8 @@ class PatientProfile(User):
         self.last_name = last_name
         self.date_of_birth = date_of_birth
         self.phone_number = phone_number
-        # self.gender = gender
         self.medical_history = medical_history
         try:
-            # Pass gender directly to the Gender enum (case-insensitive)
             self.gender = Gender(gender)
         except ValueError as e:
             raise ValueError(str(e))

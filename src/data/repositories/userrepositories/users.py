@@ -2,7 +2,7 @@ from bson import ObjectId
 from pymongo import MongoClient
 
 from src.data.models.user import User
-from src.data.repositories.userrepository import UserRepository
+from src.data.repositories.userrepositories.userrepository import UserRepository
 
 
 class Users(UserRepository):
